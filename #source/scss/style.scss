@@ -1,0 +1,479 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+
+// Переменные для блока
+$fz: 30px;
+$color_1: #626262;
+$color_2: #b4ad9e;
+
+// Шаблон №1
+
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 72px;
+}
+.header:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	z-index: 2;
+}
+.header__container {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 104px;
+	justify-content: space-between;
+	align-items: center;
+}
+._container {
+	max-width: 1200px;
+	padding: 0px 15px;
+	margin: 0 auto;
+}
+@media (max-width: 1200px) {
+	._container {
+		max-width: 970px;
+	}
+}
+@media (max-width: 992px) {
+	._container {
+		max-width: 750px;
+	}
+}
+@media (max-width: 767px) {
+	._container {
+		max-width: none;
+	}
+}
+
+.header__logo {
+	font-family: Inconsolata;
+	font-size: 30px;
+	text-transform: uppercase;
+	letter-spacing: 6px;
+	line-height: 120%;
+	color: inherit;
+	align-items: center;
+	position: relative;
+	z-index: 3;
+	&:hover {
+		color: rgb(27, 132, 158);
+		transition: all 0.5s ease 0s;
+	}
+}
+.header__logo img {
+	max-width: 100%;
+}
+
+.header__burger {
+	display: none;
+}
+
+.header__menu {
+	display: flex;
+	:not(:last-child) {
+		margin-right: 103px;
+	}
+}
+.menu__list {
+	display: flex;
+}
+.menu__item {
+	position: relative;
+	z-index: 2;
+}
+.menu__link {
+	display: flex;
+	flex-wrap: wrap;
+	font-family: PlayfairDisplay;
+	font-size: 14px;
+	color: #626262;
+	line-height: 120%;
+	text-transform: uppercase;
+	&:hover {
+		color: rgb(255, 212, 20);
+		text-decoration: underline;
+		transition: all 0.5s ease-out 0s;
+	}
+}
+
+@media (max-width: 767px) {
+	body.lock {
+		overflow: hidden;
+	}
+	.header__container {
+		height: 50px;
+	}
+	.header__logo {
+		font-size: 20px;
+	}
+	.header__burger {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		position: relative;
+		z-index: 3;
+	}
+	.header__burger span {
+		position: absolute;
+		background-color: #000;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		top: 9px;
+		transition: all 0.3s ease 0s;
+	}
+	.header__burger:before,
+	.header__burger:after {
+		content: "";
+		background-color: #000;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		left: 0;
+		transition: all 0.3s ease 0s;
+	}
+	.header__burger:before {
+		top: 0;
+	}
+	.header__burger:after {
+		bottom: 0;
+	}
+	.header__burger.active:before {
+		transform: rotate(45deg);
+		top: 9px;
+	}
+	.header__burger.active:after {
+		transform: rotate(-45deg);
+		bottom: 9px;
+	}
+	.header__burger.active span {
+		transform: scale(0);
+	}
+	.header__menu {
+		position: fixed;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		transition: all 0.3s ease 0s;
+		background-color: rgb(208, 205, 243);
+		padding: 70px 10px 20px 15px;
+	}
+	.header__menu.active {
+		top: 0;
+	}
+
+	.menu__list {
+		display: block;
+	}
+	.menu__list li {
+		margin-bottom: 20px;
+	}
+	.menu__link {
+		font-size: 24px;
+	}
+	.header__logo {
+		font-size: 36px;
+	}
+}
+
+.image-horse {
+	padding: 125px 0px 0px 0px;
+	margin: 0 auto;
+	display: block;
+	overflow: hidden;
+	.img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	margin-bottom: 99px;
+}
+
+// .................................
+.page {
+	flex: 1 1 auto;
+}
+.page__photodiary {
+}
+
+//.............................
+
+._page__container {
+	padding: 0px 15px;
+	max-width: 908px;
+	margin: 0 auto;
+	margin-bottom: 135px;
+}
+@media (max-width: 908px) {
+	._page__container {
+		max-width: 750px;
+	}
+}
+@media (max-width: 750px) {
+	._page__container {
+		max-width: none;
+	}
+}
+.photodiary__link {
+}
+._link {
+	font-family: Ubuntu;
+	font-size: 14px;
+	font-weight: 300;
+	color: #b4ad9e;
+	text-transform: uppercase;
+	line-height: 142%;
+	display: inline-block;
+	&:hover {
+		color: rgb(255, 212, 20);
+		transition: all 0.5s ease 0s;
+		text-decoration: underline;
+	}
+}
+.photodiary__title {
+	margin-bottom: 34px;
+}
+._title {
+	font-family: PlayfairDisplay;
+	font-size: $fz;
+	color: #626262;
+	line-height: 142%;
+}
+.photodiary__text {
+	display: flex;
+	font-family: PlayfairDisplay;
+	line-height: 178%;
+	color: #626262;
+	margin-bottom: 52px;
+}
+.photodiary__comment {
+}
+
+// .......................................................
+
+.page__lifestyle {
+	max-width: 940px;
+}
+._page__container {
+}
+.lifestyle__colum {
+}
+._colum {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 132px;
+}
+.colum__item {
+	padding: 0px 15px;
+}
+.item__image {
+	margin-bottom: 32px;
+	padding: 0px 0px 58% 0px;
+	overflow: hidden;
+	position: relative;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+.item-link {
+	font-weight: 300;
+	font-family: Ubuntu;
+	color: $color_2;
+	line-height: 142%;
+	text-transform: uppercase;
+	display: inline-block;
+	margin-bottom: 28px;
+	&:hover {
+		color: rgb(255, 212, 20);
+		transition: all 0.5s ease 0s;
+		text-decoration: underline;
+	}
+}
+.item-title {
+	font-family: PlayfairDisplay;
+	font-size: $fz;
+	color: $color_1;
+	line-height: 142%;
+	margin-bottom: 34px;
+}
+.item-text {
+	font-family: PlayfairDisplay;
+	color: $color_1;
+	line-height: 150%;
+	max-width: 420px;
+}
+
+// ..........................................................
+
+.page__newsletter {
+	background-color: #f0f0f0;
+	margin-bottom: 103px;
+}
+
+.newsletter__body {
+	text-align: center;
+}
+.newsletter-title {
+	padding-top: 73px;
+	font-size: $fz;
+	color: #333;
+	font-family: PlayfairDisplay;
+	letter-spacing: 0.75px;
+	margin-bottom: 83px;
+}
+.enter__container {
+}
+.enter-link {
+	color: $color_1;
+	font-family: PlayfairDisplay;
+	span {
+		background: right no-repeat url("../../img/icon/ios.ico");
+		padding: 0px 180px 0px 0px;
+	}
+}
+@media (max-width: 400px) {
+	.enter-link {
+		span {
+			padding: 0px 100px 0px 0px;
+		}
+	}
+}
+.newsletter-border {
+	display: inline-block;
+	margin-bottom: 74px;
+}
+@media (max-width: 360px) {
+	.newsletter-border {
+		display: none;
+	}
+}
+
+// ...................................................
+
+.pagwe__lifestyl {
+	margin-bottom: 165px;
+}
+.page__container {
+}
+.lifestyle__colum {
+}
+._colum {
+}
+.colum__item {
+}
+.item__image {
+}
+.item-link {
+}
+.item-title {
+}
+.item-text {
+}
+
+// .........................................
+
+.page__button {
+}
+.page__container {
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	justify-content: center;
+	margin-bottom: 100px;
+}
+.button-load {
+	display: inline-block;
+	padding: 15px 34px 15px;
+	width: 164px;
+	height: 60px;
+	border: solid 1px #626262;
+	font-size: 20px;
+	line-height: 1.2em;
+	color: $color_1;
+	&:hover {
+		background-color: rgb(114, 114, 196);
+		color: rgba(222, 238, 0, 0.973);
+		transition: all 1.5s ease 0s;
+	}
+}
+
+// ..................................................
+
+.footer {
+}
+.footer__main {
+	max-width: 1200px;
+	max-height: 97px;
+}
+._container {
+}
+.footer__menu {
+	background-color: #f0f0f0;
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 71px 40px 150px;
+	text-align: center;
+}
+@media (max-width: 1200px) {
+	.footer__menu {
+		max-width: 970px;
+	}
+}
+@media (max-width: 750px) {
+	.footer__menu {
+		max-width: none;
+		padding: 20px;
+	}
+}
+.menu-footer__list {
+	:not(:last-child) {
+		margin-right: 17px;
+	}
+}
+.menu-footer__link {
+	color: #000;
+	font-family: PlayfairDisplay;
+	line-height: 1.71em;
+	&:hover {
+		color: rgb(255, 212, 20);
+		transition: all 0.5s ease 0s;
+		text-decoration: underline;
+	}
+}
+.menu-footer__social {
+	padding: 0px 17px;
+	display: inline-block;
+	display: flex;
+	:not(:last-child) {
+		margin-right: 17px;
+	}
+}
+.menu-footer__link-item {
+	color: #000;
+	font-family: PlayfairDisplay;
+	line-height: 1.71em;
+}
+.social__item {
+}
